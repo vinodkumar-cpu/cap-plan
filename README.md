@@ -4,7 +4,7 @@ A React-based workforce capacity planning tool to plan headcount requirements, m
 
 ## Features
 
-- **Volume Forecasting**: Upload call/transaction volumes by queue and timezone
+- **Volume Forecasting**: Upload demand/forecast by queue and timezone
 - **Capacity Calculation**: Automated HC calculations based on AHT, NPT, Shrinkage, and Occupancy
 - **Staffing Management**: Configure internal/external splits with queue-level overrides
 - **Batch Planning**: Manage new hire and upskilling batches with ramp-up curves

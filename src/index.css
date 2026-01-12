@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --primary: 160 84% 39%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 160 84% 39%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-100 rounded;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 rounded;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-400;
+}
+
+/* Input number spinners */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+/* Smooth transitions */
+* {
+  @apply transition-colors duration-150;
+}
+
+/* Focus visible styles */
+.focus-visible\:ring-2:focus-visible {
+  @apply outline-none ring-2 ring-offset-2;
+}
+
+/* Table styles */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* Sticky header styles */
+thead.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* Responsive table */
+@media (max-width: 640px) {
+  .responsive-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Card hover effect */
+.card-hover {
+  @apply transition-shadow duration-200 hover:shadow-lg;
+}
+
+/* Badge animations */
+.animate-pulse-slow {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Loading skeleton */
+.skeleton {
+  @apply animate-pulse bg-slate-200 rounded;
+}
+
+/* Custom animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.2s ease-out;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-break {
+    page-break-before: always;
+  }
+}
